@@ -1,0 +1,21 @@
+.scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-accent);
+  font-family: var(--font-main);
+  font-weight: 500;
+  font-size: 1rem;
+  z-index: 20;
+  pointer-events: none;
+
+  &__arrow {
+    width: 1.5rem;
+    height: 1.5rem;
+    color: inherit;
+  }
+}

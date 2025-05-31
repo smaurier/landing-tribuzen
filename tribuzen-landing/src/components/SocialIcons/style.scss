@@ -34,22 +34,21 @@
       height: 1.25rem;
       transition: all 0.3s ease;
     }
-    
-    // Specific hover effects for each platform
+      // Specific hover effects for each platform
     &[href*="mastodon"]:hover svg {
-      fill: #6364FF;
+      fill: var(--color-social-mastodon);
     }
     
     &[href*="instagram"]:hover svg {
-      fill: #E1306C;
+      fill: var(--color-social-instagram);
     }
     
     &[href*="facebook"]:hover svg {
-      fill: #1877F2;
+      fill: var(--color-social-facebook);
     }
     
     &[href*="linkedin"]:hover svg {
-      fill: #0A66C2;
+      fill: var(--color-social-linkedin);
     }
   }
   

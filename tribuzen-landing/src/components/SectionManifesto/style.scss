@@ -1,7 +1,7 @@
 // styles/modules/_manifesto.scss
 
 .manifesto {
-  background: #fef9f6;
+  background: var(--color-bg-manifesto);
   padding: 6rem 2rem;
   text-align: center;
 
@@ -13,19 +13,19 @@
   h2 {
     font-size: 2.5rem;
     margin-bottom: 2rem;
-    color: #333;
+    color: var(--color-text-primary);
   }
 
   p {
     font-size: 1.125rem;
     line-height: 1.7;
     margin-bottom: 1.5rem;
-    color: #555;
+    color: var(--color-text-secondary);
 
     &.manifesto__signature {
       font-style: italic;
       margin-top: 2rem;
-      color: #888;
+      color: var(--color-text-light);
     }
   }
 }

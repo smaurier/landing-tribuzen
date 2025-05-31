@@ -1,12 +1,36 @@
 :root {
+  // === COULEURS PRINCIPALES ===
   --color-bg: #fdfcfb;
   --color-text: #1a1a1a;
   --color-accent: #f6c6b2;
   --color-accent-hover: #f3b59f;
   --color-muted: #eaeaea;
 
+  // === COULEURS DE TEXTE ===
+  --color-text-primary: #333;
+  --color-text-secondary: #555;
+  --color-text-muted: #666;
+  --color-text-light: #888;
+  --color-text-lighter: #999;
+
+  // === COULEURS DE FOND DES SECTIONS ===
+  --color-bg-white: #fff;
+  --color-bg-benefits: #fff4ed;
+  --color-bg-timeline: #fffdfc;
+  --color-bg-story: #fbeee6;
+  --color-bg-manifesto: #fef9f6;
+  --color-bg-cta: #fffaf7;
+
+  // === COULEURS DES RÉSEAUX SOCIAUX ===
+  --color-social-mastodon: #6364FF;
+  --color-social-instagram: #E1306C;
+  --color-social-facebook: #1877F2;
+  --color-social-linkedin: #0A66C2;
+
+  // === TYPOGRAPHIE ===
   --font-main: 'Manrope', sans-serif;
 
+  // === ESPACEMENTS ===
   --space-xs: 0.5rem;
   --space-sm: 1rem;
   --space-md: 2rem;
@@ -14,9 +38,25 @@
 }
 
 [data-theme='dark'] {
+  // === COULEURS PRINCIPALES ===
   --color-bg: #141414;
   --color-text: #f9f9f9;
   --color-accent: #e5a299;
   --color-accent-hover: #d68d83;
   --color-muted: #2a2a2a;
+
+  // === COULEURS DE TEXTE ===
+  --color-text-primary: #f0f0f0;
+  --color-text-secondary: #d0d0d0;
+  --color-text-muted: #b0b0b0;
+  --color-text-light: #909090;
+  --color-text-lighter: #707070;
+
+  // === COULEURS DE FOND DES SECTIONS ===
+  --color-bg-white: #1f1f1f;
+  --color-bg-benefits: #1a1614;
+  --color-bg-timeline: #1a1a19;
+  --color-bg-story: #1a1815;
+  --color-bg-manifesto: #1a1916;
+  --color-bg-cta: #1a1a17;
 }

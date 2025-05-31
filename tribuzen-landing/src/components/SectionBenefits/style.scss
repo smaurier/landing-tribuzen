@@ -1,6 +1,6 @@
 .benefit {
   padding: 8rem 2rem;
-  background: #fef9f7;
+  background: var(--color-bg-benefits);
 
   &__wrapper {
     display: flex;
@@ -49,16 +49,14 @@
       padding: 1.5rem;
       font-size: 1.1rem;
       font-family: 'Manrope', sans-serif;
-    }
-
-    &-front {
-      background: #fff;
-      color: #555;
-      border: 2px solid #f3b59f;
+    }    &-front {
+      background: var(--color-bg-white);
+      color: var(--color-text-secondary);
+      border: 2px solid var(--color-accent-hover);
     }
 
     &-back {
-      background: #f3b59f;
+      background: var(--color-accent-hover);
       color: white;
       transform: rotateY(180deg);
     }

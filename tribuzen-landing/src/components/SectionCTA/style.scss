@@ -1,5 +1,5 @@
 .cta {
-  background: #fffaf7;
+  background: var(--color-bg-cta);
   padding: 8rem 2rem;
   text-align: center;
 
@@ -11,14 +11,14 @@
   h2 {
     font-size: 2.2rem;
     margin-bottom: 1rem;
-    font-family: 'Manrope', sans-serif;
-    color: #333;
+    font-family: var(--font-main);
+    color: var(--color-text-primary);
   }
 
   p {
     font-size: 1.2rem;
     margin-bottom: 2rem;
-    color: #555;
+    color: var(--color-text-secondary);
   }
 
   &__form {
