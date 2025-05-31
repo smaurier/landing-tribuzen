@@ -1,0 +1,24 @@
+.story {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: #fbeee6;
+  color: #333;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 0 2rem;
+    max-width: 800px;
+    text-align: center;
+  }
+
+  &__line {
+    font-size: 2rem;
+    font-weight: 500;
+    font-family: 'Manrope', sans-serif;
+    opacity: 0;
+  }
+}
