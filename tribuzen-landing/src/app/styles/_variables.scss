@@ -1,0 +1,22 @@
+:root {
+  --color-bg: #fdfcfb;
+  --color-text: #1a1a1a;
+  --color-accent: #f6c6b2;
+  --color-accent-hover: #f3b59f;
+  --color-muted: #eaeaea;
+
+  --font-main: 'Manrope', sans-serif;
+
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 4rem;
+}
+
+[data-theme='dark'] {
+  --color-bg: #141414;
+  --color-text: #f9f9f9;
+  --color-accent: #e5a299;
+  --color-accent-hover: #d68d83;
+  --color-muted: #2a2a2a;
+}

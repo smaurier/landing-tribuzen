@@ -1,6 +1,15 @@
 import { FC } from 'react';
+import './style.scss';
 
-export const SocialIcons: FC = () => {
+interface SocialIconsProps {
+  variant?: 'default' | 'compact';
+  centered?: boolean;
+}
+
+export const SocialIcons: FC<SocialIconsProps> = ({
+  variant = 'default',
+  centered = false
+}) => {
   const icons = [
     {
       name: 'Mastodon',
@@ -71,9 +80,8 @@ export const SocialIcons: FC = () => {
       ),
     },
   ];
-
   return (
-    <div className="flex gap-4 items-center">
+    <div className={`social-icons ${variant === 'compact' ? 'social-icons--compact' : ''} ${centered ? 'social-icons--centered' : ''}`}>
       {icons.map((icon) => (
         <a
           key={icon.name}
@@ -81,7 +89,7 @@ export const SocialIcons: FC = () => {
           target="_blank"
           rel="noopener"
           aria-label={icon.name}
-          className="hover:scale-110 transition-transform duration-300"
+          className="social-icons__link"
         >
           {icon.svg}
         </a>

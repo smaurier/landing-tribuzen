@@ -15,10 +15,8 @@ export default function Footer() {
           <a href="/contact">Contact</a>
           <a href="/privacy">Politique de confidentialité</a>
           <a href="/credits">Crédits</a>
-        </div>
-
-        <div className="footer__social">
-          <SocialIcons />
+        </div>        <div className="footer__social">
+          <SocialIcons centered />
         </div>
       </div>
     </footer>
