@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { SocialIcons } from '../SocialIcons';
 import './style.scss'
 
@@ -6,7 +7,7 @@ export default function Footer() {
     <footer className="footer">
       <div className="footer__inner">
         <div className="footer__branding">
-          <img src="/logo.svg" alt="TribuZen Logo" className="footer__logo" />
+          <Image src="/logo.svg" alt="TribuZen Logo" className="footer__logo" width={100} height={40} />
           <p>Pour les familles, par une famille.</p>
         </div>
 

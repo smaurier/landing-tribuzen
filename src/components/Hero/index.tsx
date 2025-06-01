@@ -7,6 +7,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './style.scss';
 import ScrollIndicator from '../ScrollIndicator';
 import Logo from '../Logo';
+import Image from 'next/image';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -46,11 +47,11 @@ export default function Hero() {
       <Logo />
       <ScrollIndicator />
       <div className="hero__split hero__split--left" ref={leftRef}>
-        <img src="/images/chaos.jpg" alt="Parent débordé" />
+        <Image src="/images/chaos.jpg" alt="Parent débordé" width={800} height={600} />
       </div>
 
       <div className="hero__split hero__split--right" ref={rightRef}>
-        <img src="/images/zen-family.jpg" alt="Famille zen" />
+        <Image src="/images/zen-family.jpg" alt="Famille zen" width={800} height={600} />
         <motion.div className="hero__content hero__content--overlay" ref={contentRef}>
           <h1>
             Et si organiser votre tribu devenait<br />

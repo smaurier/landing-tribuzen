@@ -24,7 +24,7 @@ const benefits = [
 
 export default function SectionBenefits() {
   useEffect(() => {
-    gsap.utils.toArray('.benefit__card').forEach((card: any) => {
+    (gsap.utils.toArray('.benefit__card') as HTMLElement[]).forEach((card: HTMLElement) => {
       ScrollTrigger.create({
         trigger: card,
         start: 'top 80%',
