@@ -6,28 +6,9 @@ import './style.scss';
 
 export default function SectionCTA() {
   const [submitted, setSubmitted] = useState(false);
-  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setLoading(true);
-
-    const form = e.currentTarget;
-    const data = new FormData(form);
-
-    // Si le champ honeypot est rempli, on annule
-    if (data.get('website')) {
-      setLoading(false);
-      return;
-    }
-
-    const res = await fetch('https://submit-form.com/nuAPunaAw', {
-      method: 'POST',
-      body: data,
-    });
-
-    if (res.ok) setSubmitted(true);
-    setLoading(false);
+  const handleSubmit = () => {
+    setSubmitted(true);
   };
 
   return (
@@ -63,8 +44,11 @@ export default function SectionCTA() {
           ) : (
             <motion.form
               key="form"
-              onSubmit={handleSubmit}
               className="cta__form"
+              method="POST"
+              action="https://submit-form.com/nuAPunaAw"
+              target="hidden_iframe"
+              onSubmit={handleSubmit}
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0 }}
@@ -91,9 +75,14 @@ export default function SectionCTA() {
                 placeholder="Votre email"
                 required
               />
-              <button type="submit" disabled={loading}>
-                {loading ? '...' : 'Je m’inscris'}
-              </button>
+              <button type="submit">Je m’inscris</button>
+
+              {/* Iframe cachée pour éviter le redirect */}
+              <iframe
+                name="hidden_iframe"
+                style={{ display: 'none' }}
+                aria-hidden="true"
+              ></iframe>
             </motion.form>
           )}
         </AnimatePresence>
