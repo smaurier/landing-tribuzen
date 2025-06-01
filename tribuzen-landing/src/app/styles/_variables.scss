@@ -1,34 +1,40 @@
 :root {
-  // === COULEURS PRINCIPALES ===
-  --color-bg: #fdfcfb;
-  --color-text: #1a1a1a;
-  --color-accent: #f6c6b2;
-  --color-accent-hover: #f3b59f;
-  --color-muted: #eaeaea;
+  // === PALETTE PRINCIPALE (clair) ===
+  --color-bg: #F9F6F1;
+  --color-text: #3E2F27;
 
-  // === COULEURS DE TEXTE ===
-  --color-text-primary: #333;
-  --color-text-secondary: #555;
-  --color-text-muted: #666;
-  --color-text-light: #888;
-  --color-text-lighter: #999;
+  --color-accent: #F28B82;            // corail tendre (CTA, éléments actifs)
+  --color-accent-hover: #e96d62;
 
-  // === COULEURS DE FOND DES SECTIONS ===
-  --color-bg-white: #fff;
+  --color-muted: #9BBF9E;             // vert d’eau doux pour les éléments neutres
+
+  // === CONTRASTE SUPPLÉMENTAIRE (secondaire)
+  --color-secondary: #6C63FF;         // violet fun (icônes, badges, hover spéciaux)
+  --color-secondary-hover: #554ee0;
+
+  // === TEXTE ===
+  --color-text-primary: #3E2F27;
+  --color-text-secondary: #6B4F3F;
+  --color-text-muted: #9c8a7c;
+  --color-text-light: #b7a89e;
+  --color-text-lighter: #d3c8c1;
+
+  // === BACKGROUNDS DE SECTIONS ===
+  --color-bg-white: #ffffff;
   --color-bg-benefits: #fff4ed;
   --color-bg-timeline: #fffdfc;
   --color-bg-story: #fbeee6;
   --color-bg-manifesto: #fef9f6;
   --color-bg-cta: #fffaf7;
 
-  // === COULEURS DES RÉSEAUX SOCIAUX ===
+  // === TYPOGRAPHIE ===
+  --font-main: 'Manrope', sans-serif;
+
+  // === RÉSEAUX SOCIAUX ===
   --color-social-mastodon: #6364FF;
   --color-social-instagram: #E1306C;
   --color-social-facebook: #1877F2;
   --color-social-linkedin: #0A66C2;
-
-  // === TYPOGRAPHIE ===
-  --font-main: 'Manrope', sans-serif;
 
   // === ESPACEMENTS ===
   --space-xs: 0.5rem;
@@ -37,22 +43,31 @@
   --space-lg: 4rem;
 }
 
+// === THÈME SOMBRE (via data-theme ou media query) ===
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #202C39;
+    --color-text: #FAF3E0;
+  }
+}
+
 [data-theme='dark'] {
-  // === COULEURS PRINCIPALES ===
   --color-bg: #141414;
   --color-text: #f9f9f9;
+
   --color-accent: #e5a299;
   --color-accent-hover: #d68d83;
   --color-muted: #2a2a2a;
 
-  // === COULEURS DE TEXTE ===
+  --color-secondary: #8f80ff;
+  --color-secondary-hover: #7766ff;
+
   --color-text-primary: #f0f0f0;
   --color-text-secondary: #d0d0d0;
   --color-text-muted: #b0b0b0;
   --color-text-light: #909090;
   --color-text-lighter: #707070;
 
-  // === COULEURS DE FOND DES SECTIONS ===
   --color-bg-white: #1f1f1f;
   --color-bg-benefits: #1a1614;
   --color-bg-timeline: #1a1a19;

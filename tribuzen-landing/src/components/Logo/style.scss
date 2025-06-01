@@ -1,0 +1,12 @@
+.logo {
+  position: fixed;
+  top: 2rem;
+  left: 2rem;
+  z-index: 1000;
+
+  img {
+    filter: brightness(0) invert(1); // rend le SVG blanc s’il est noir à la base
+    width: 100px;
+    height: auto;
+  }
+}

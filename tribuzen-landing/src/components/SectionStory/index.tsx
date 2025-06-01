@@ -8,41 +8,30 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 export default function SectionStory() {
-  const linesRef = useRef<(HTMLDivElement | null)[]>([]);
+  const sectionRef = useRef(null);
 
   useEffect(() => {
-    linesRef.current.forEach((el, i) => {
-      if (!el) return;
+    const lines = gsap.utils.toArray('.story__line');
 
-      gsap.fromTo(
-        el,
-        { x: i % 2 === 0 ? -100 : 100, opacity: 0 },
-        {
-          x: 0,
-          opacity: 1,
-          duration: 1,
-          scrollTrigger: {
-            trigger: el,
-            start: 'top 80%',
-            toggleActions: 'play none none reverse',
-          },
-        }
-      );
+    gsap.to(lines, {
+      opacity: 1,
+      y: 0,
+      duration: 1,
+      stagger: 0.5,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        start: 'top 80%',
+      },
     });
   }, []);
 
   return (
-    <section className="story">
+    <section className="story" ref={sectionRef}>
       <div className="story__container">
-        {['On court après le temps.', 'Les listes s’accumulent.', 'Les routines s’effilochent.'].map((text, i) => (
-          <div
-            className="story__line"
-            key={i}
-            ref={(el) => (linesRef.current[i] = el)}
-          >
-            {text}
-          </div>
-        ))}
+        <p className="story__line story__line--thin">On court après le temps.</p>
+        <p className="story__line story__line--normal">Les listes s’accumulent.</p>
+        <p className="story__line story__line--bold">Les routines s’effilochent.</p>
       </div>
     </section>
   );

@@ -6,6 +6,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './style.scss';
 import ScrollIndicator from '../ScrollIndicator';
+import Logo from '../Logo';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -42,6 +43,7 @@ export default function Hero() {
 
   return (
     <section className="hero" ref={containerRef}>
+      <Logo />
       <ScrollIndicator />
       <div className="hero__split hero__split--left" ref={leftRef}>
         <img src="/images/chaos.jpg" alt="Parent débordé" />
