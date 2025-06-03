@@ -16,38 +16,48 @@ export default function Hero() {
   const leftRef = useRef(null);
   const rightRef = useRef(null);
   const contentRef = useRef(null);
+  const introTextRef = useRef(null);
 
+  // ➤ ANIMATION INITIALE (phrase d’accroche)
+  useEffect(() => {
+    const introTL = gsap.timeline();
+
+    introTL.fromTo(
+      introTextRef.current,
+      { opacity: 0, y: 30 },
+      { opacity: 1, y: 0, duration: 1, ease: 'power2.out' }
+    );
+  }, []);
+
+  // ➤ ANIMATION SCROLL HORIZONTALE
   useEffect(() => {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: containerRef.current,
         start: 'top top',
-        end: '+=300%', // +++ pour avoir une vraie phase d'inertie
+        end: '+=300%',
         scrub: true,
         pin: true,
       },
     });
 
-    // 1. Scroll horizontal
     tl.to(leftRef.current, { xPercent: -100, ease: 'none' })
       .fromTo(rightRef.current, { xPercent: 100 }, { xPercent: 0, ease: 'none' }, '<')
-
-      // 2. Apparition du contenu (relativement tôt dans le scroll)
       .fromTo(contentRef.current, { opacity: 0, x: 50 }, { opacity: 1, x: 0, duration: 0.5 })
       .fromTo('.hero__cta', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5 })
-
-      // 3. Phase vide, le scroll continue mais rien ne bouge
-      .to({}, { duration: 2 }); // ← cette phase absorbe un bout du scroll sans effet
+      .to({}, { duration: 2 });
   }, []);
-
-
 
   return (
     <section className="hero" ref={containerRef}>
       <Logo />
       <ScrollIndicator />
+
       <div className="hero__split hero__split--left" ref={leftRef}>
         <Image src="/images/chaos.jpg" alt="Parent débordé" width={800} height={600} />
+        <div className="hero__intro" ref={introTextRef}>
+          Bienvenue dans votre havre familial
+        </div>
       </div>
 
       <div className="hero__split hero__split--right" ref={rightRef}>
